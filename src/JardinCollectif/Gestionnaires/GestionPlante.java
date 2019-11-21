@@ -20,11 +20,11 @@ public class GestionPlante {
 	// v�rifie l'existence		
 			
 			if(!plantes.existe(nom)) {
-			throw new IFT287Exception("plante d�j� existante.");
+			throw new IFT287Exception("plante deja existante.");
 			
 			}
 			if(jour<= 0) {
-				throw new IFT287Exception("P�riode de germination trop court.");
+				throw new IFT287Exception("Periode de germination trop court.");
 			}
 			plantes.ajouterPlante(nom, jour);
 				

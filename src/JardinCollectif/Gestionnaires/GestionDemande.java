@@ -73,10 +73,10 @@ public class GestionDemande {
 				throw new IFT287Exception(noMembre +"n'est pas Administrateur");
 			}
 			if(demandes.getStatus(nomlot) == status.STATUS_APPROVED)
-			{throw new IFT287Exception(nomlot +"est d�j� approuv�e");}
+			{throw new IFT287Exception(nomlot +"est deja approuvee");}
 			
 			if(demandes.getStatus(nomlot) == status.STATUS_DENIED)
-			{throw new IFT287Exception(nomlot +"est d�j� Refus�e");}
+			{throw new IFT287Exception(nomlot +"est deja Refusee");}
 			
 			demandes.updateStatus(nomlot,noMembre,status.STATUS_APPROVED);
 	
@@ -97,10 +97,10 @@ public class GestionDemande {
 				throw new IFT287Exception(noMembre +"n'est pas Administrateur");
 			}
 			if(demandes.getStatus(nomlot) == status.STATUS_APPROVED)
-			{throw new IFT287Exception(nomlot +"est d�j� approuv�e");}
+			{throw new IFT287Exception(nomlot +"est deja approuvee");}
 			
 			if(demandes.getStatus(nomlot) == status.STATUS_DENIED)
-			{throw new IFT287Exception(nomlot +"est d�j� Refus�e");}
+			{throw new IFT287Exception(nomlot +"est deja Refusee");}
 			
 			demandes.updateStatus(nomlot,noMembre,status.STATUS_DENIED);
 	}

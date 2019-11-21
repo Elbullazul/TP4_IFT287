@@ -25,7 +25,7 @@ public class GestionMembre {
 
 			// Vérifie si le membre existe déja
 			if (membre.existe(nomemb))
-				throw new IFT287Exception("Membre existe déjà: " + nomemb);
+				throw new IFT287Exception("Membre existe deja�: " + nomemb);
 
 			// Ajout du membre.
 			membre.inscrire(nomemb, fName, name, pw);
@@ -44,7 +44,7 @@ public class GestionMembre {
 
 			// Suppression du membre
 			membre.desinscrire(nomemb);
-			System.out.println("Le Membre:" + nomemb + "est Supprim�");
+			System.out.println("Le Membre:" + nomemb + "est Supprimee");
 
 		} catch (Exception e) {
 
@@ -62,6 +62,8 @@ public class GestionMembre {
 			if (!membre.estAdmin(nomemb)) {
 				throw new IFT287Exception(nomemb + "Est un admin");
 			}
+			
+			membre.updateAdmin(nomemb,true);
 
 		} catch (Exception e) {
 
@@ -74,7 +76,7 @@ public class GestionMembre {
 			if (membre.listerMembre() == null) {
 				throw new IFT287Exception("Aucun Membre trouver");
 			}
-			membre.afficherMembre(); // v�rification ?
+			membre.afficherMembre(); 
 
 		} catch (Exception e) {
 

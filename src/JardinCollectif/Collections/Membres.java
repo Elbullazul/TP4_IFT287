@@ -70,7 +70,7 @@ public class Membres {
 	public boolean estAdmin(String nuMemb) {
 		Membre m = new Membre(membresCollection.find(eq("id", nuMemb)).first());
 
-		if (m.getIsAdmin()) {
+		if (m.getIsAdmin() == true) {
 			return true;
 		}
 		return false;

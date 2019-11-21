@@ -22,7 +22,7 @@ public class GestionLot {
 				throw new IFT287Exception("Nombre de Membre trop petit!");
 			}
 			if(lots.existe(nomlot)) {
-				throw new IFT287Exception("Lot d�j� existant.");
+				throw new IFT287Exception("Lot deja existant.");
 			}
 		}
 		 catch (Exception e) {

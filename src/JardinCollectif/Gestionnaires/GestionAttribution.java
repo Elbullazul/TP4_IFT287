@@ -15,7 +15,7 @@ public class GestionAttribution {
 
 	public GestionAttribution(Lots lot, Membres membre, Attributions attribution) throws Exception {
 		if (lot.getConnexion() != membre.getconnexion() || attribution.getconnexion() != membre.getconnexion()) {
-			throw new IFT287Exception("Les collections d'objets n'utilisent pas la même connexion au serveur");
+			throw new IFT287Exception("Les collections d'objets n'utilisent pas la meme connexion au serveur");
 		}
 		this.lots = lot;
 		this.membres = membre;
@@ -31,7 +31,7 @@ public class GestionAttribution {
 				throw new IFT287Exception("Le Membre" + id + "est inexistant");
 			}
 			if (attributions.existe(nomlot, id)) {
-				throw new IFT287Exception("Le Membre:" + id + "fait d�ja partie du lot");
+				throw new IFT287Exception("Le Membre:" + id + "fait deja partie du lot");
 			}
 
 		} catch (Exception e) {

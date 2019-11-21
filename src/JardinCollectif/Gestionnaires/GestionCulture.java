@@ -22,7 +22,7 @@ public class GestionCulture {
 
 		if (lot.getConnexion() != plante.getconnexion() || lot.getConnexion() != attribution.getconnexion()
 				|| membre.getconnexion() != culture.getconnexion() || membre.getconnexion() != lot.getConnexion()) {
-			throw new IFT287Exception("Les collections d'objets n'utilisent pas la même connexion au serveur");
+			throw new IFT287Exception("Les collections d'objets n'utilisent pas la meme connexion au serveur");
 		}
 		this.lots = lot;
 		this.plantes = plante;
@@ -66,8 +66,14 @@ public class GestionCulture {
 			}
 			if (!attributions.existe(nomLot, id)) {
 				throw new IFT287Exception("Membre:" + id + "ne fait pas partie de" + nomLot);
-
 			}
+			if(cultures.NbExemplaire(nomLot, nomPlante) == 0) {
+				throw new IFT287Exception("Le lot"+ nomLot + "contient"+ nomPlante + cultures.NbExemplaire(nomLot, nomPlante) );
+			if() {}
+				
+			}
+				cultures.updateNbExemplaire(nomLot, nomPlante, 0);
+			
 		} catch (Exception e) {
 			throw e;
 		}
