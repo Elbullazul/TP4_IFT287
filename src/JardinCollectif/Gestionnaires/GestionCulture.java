@@ -1,5 +1,6 @@
 package JardinCollectif.Gestionnaires;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import JardinCollectif.IFT287Exception;
@@ -68,10 +69,10 @@ public class GestionCulture {
 				throw new IFT287Exception("Membre:" + id + "ne fait pas partie de" + nomLot);
 			}
 			if(cultures.NbExemplaire(nomLot, nomPlante) == 0) {
-				throw new IFT287Exception("Le lot"+ nomLot + "contient"+ nomPlante + cultures.NbExemplaire(nomLot, nomPlante) );
-			if() {}
+				throw new IFT287Exception("Le lot"+ nomLot + "contient"+ nomPlante + cultures.NbExemplaire(nomLot, nomPlante) );}
+			//if(cultures.getdate(nomLot,nomPlante). == new Date()) {}
 				
-			}
+
 				cultures.updateNbExemplaire(nomLot, nomPlante, 0);
 			
 		} catch (Exception e) {
@@ -79,4 +80,23 @@ public class GestionCulture {
 		}
 	}
 
+	
+	public void affichePlanteLot(String nomlot) throws Exception {
+		try {
+			if (!lots.existe(nomlot)) {
+				throw new IFT287Exception("Lots Inexistant:" + nomlot);}
+			
+			if(cultures.listerPlante(nomlot) == null) {
+				throw new IFT287Exception("La liste de plante du lot:"+ nomlot+"est vide");
+			}
+			cultures.AfficherPlante(nomlot);
+			
+			
+		}
+		catch(Exception e) {
+			throw e;
+		}
+		
+	}
+	
 }
