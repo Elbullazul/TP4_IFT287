@@ -3,13 +3,11 @@ package JardinCollectif;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
+
+
 
 /**
  * Gestionnaire d'une connexion avec une BD relationnelle via JDBC.<br>

@@ -1,7 +1,4 @@
 package JardinCollectif.Objects;
-
-import static com.mongodb.client.model.Filters.eq;
-
 import org.bson.Document;
 
 public class Membre {

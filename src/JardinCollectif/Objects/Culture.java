@@ -2,8 +2,6 @@ package JardinCollectif.Objects;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-
 import org.bson.Document;
 
 public class Culture {

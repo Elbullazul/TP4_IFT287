@@ -1,6 +1,5 @@
 package JardinCollectif.Objects;
 
-import javax.persistence.Entity;
 import org.bson.Document;
 
 public class Attribution {
