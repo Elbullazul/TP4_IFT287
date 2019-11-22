@@ -1,3 +1,42 @@
+afficherMembres
 
+inscrireMembre  bob lie 1234 1
+
+inscrireMembre  boba lie 1234 1
+
+inscrireMembre  bob lie 1234 2
 
 afficherMembres
+
+promouvoirAdministrateur 1
+	
+	afficherMembres
+	
+	afficherLots
+	
+	ajouterLot jardin1 2
+	
+	ajouterLot jardin1 2
+	
+	ajouterLot jardin2 2
+	
+	rejoindreLot jardin1 1
+	
+	afficherLots
+	
+	afficherPlante
+	
+	ajouterPlante hibiscus 15
+	
+	ajouterPlante roses 30
+	
+	afficherPlante
+	
+	retirerPlante hibiscus
+	
+	retirerPlante roses
+	
+	afficherPlante
+	
+	
+	

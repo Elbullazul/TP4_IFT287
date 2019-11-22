@@ -24,7 +24,7 @@ public class GestionMembre {
 			Membre m = new Membre(nomemb, fName, name, pw);
 
 			// Vérifie si le membre existe déja
-			if (!membre.existe(nomemb))
+			if (membre.existe(nomemb))
 				throw new IFT287Exception("Membre existe deja�: " + nomemb);
 
 			// Ajout du membre.
