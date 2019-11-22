@@ -36,6 +36,13 @@ public int gettcult () {
 	return timeG;
 }
 
+public String toString() {
+	String s = "";
+	s = "( " + this.name + " )  " + this.timeG;
+	return s;
+	
+}
+
 public Document toDocument() {
 	return new Document().append("nom",name)
 			.append("duree",timeG);

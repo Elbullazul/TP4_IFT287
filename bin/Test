@@ -10,33 +10,33 @@ afficherMembres
 
 promouvoirAdministrateur 1
 	
-	afficherMembres
+afficherMembres
 	
-	afficherLots
+afficherLots
 	
-	ajouterLot jardin1 2
+ajouterLot jardin1 2
 	
-	ajouterLot jardin1 2
+ajouterLot jardin1 2
 	
-	ajouterLot jardin2 2
+ajouterLot jardin2 2
 	
-	rejoindreLot jardin1 1
+rejoindreLot jardin1 1
 	
-	afficherLots
+afficherLots
 	
-	afficherPlante
+afficherPlantes
 	
-	ajouterPlante hibiscus 15
+ajouterPlante hibiscus 15
 	
-	ajouterPlante roses 30
+ajouterPlante roses 30
 	
-	afficherPlante
+afficherPlantes
 	
-	retirerPlante hibiscus
+retirerPlante hibiscus
 	
-	retirerPlante roses
+retirerPlante roses
 	
-	afficherPlante
+afficherPlantes
 	
 	
 	

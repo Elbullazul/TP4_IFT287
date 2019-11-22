@@ -40,6 +40,13 @@ public class Lot {
 		return maxMemb;
 	}
 	
+	public String toString() {
+		String s = "";
+		s += "(" + this.name + ") " + ", Nombre max: " + this.maxMemb;
+		return s;
+	}
+	
+	
 	public Document toDocument() {
 		return new Document().append("nom", name)
 				.append("max_collab",maxMemb);

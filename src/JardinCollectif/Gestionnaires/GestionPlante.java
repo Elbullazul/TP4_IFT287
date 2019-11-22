@@ -18,7 +18,7 @@ public class GestionPlante {
 		try {
 	
 
-			if(!plantes.existe(nom)) {
+			if(plantes.existe(nom)) {
 				throw new IFT287Exception("plante deja existante.");
 
 			}

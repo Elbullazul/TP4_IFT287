@@ -26,7 +26,7 @@ public class GestionLot {
 			}
 			
 			lots.ajouterLot(nomlot, nbmaxmembre);
-			System.out.println("Lot ajoutee");
+			//System.out.println("Lot ajoutee");
 			
 		}
 		 catch (Exception e) {
@@ -40,7 +40,7 @@ public class GestionLot {
 			throw new IFT287Exception(" lot inexistant."+nomlot);	
 		}
 		lots.supprimerLot(nomlot);
-		System.out.println("Le lot"+ nomlot + "est supprimer");
+		//System.out.println("Le lot"+ nomlot + "est supprimer");
 		}
 		catch(Exception e) {
 			throw e;
