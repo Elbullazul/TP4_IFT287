@@ -24,19 +24,5 @@ rejoindreLot jardin1 1
 	
 afficherLots
 	
-afficherPlantes
-	
-ajouterPlante hibiscus 15
-	
-ajouterPlante roses 30
-	
-afficherPlantes
-	
-retirerPlante hibiscus
-	
-retirerPlante roses
-	
-afficherPlantes
-	
 	
 	

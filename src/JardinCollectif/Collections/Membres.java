@@ -80,8 +80,8 @@ public class Membres {
 		membresCollection.updateOne(eq("id", nuMemb), set("isAdmin", isAdmin));
 	}
 
-	public List<Membre> afficherMembre() {
-		List<Membre> lmembre = new LinkedList<Membre>();
+	public void afficherMembre() {
+		//List<Membre> lmembre = new LinkedList<Membre>();
 		MongoCursor<Document> membre = membresCollection.find().iterator();
 		try {
 			while (membre.hasNext()) {
@@ -92,7 +92,7 @@ public class Membres {
 			membre.close();
 		}
 
-		return lmembre;
+		
 	}
 
 	public List<Membre> listerMembre() {

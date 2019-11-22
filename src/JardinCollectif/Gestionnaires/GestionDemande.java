@@ -26,7 +26,7 @@ public class GestionDemande {
 	public void AjouterDemande(String nomlot,String noMembre )throws Exception {
 		try {
 	
-	// v�rifie l'existence		
+	// verifie l'existence		
 			if(!lots.existe(nomlot))
 			{
 			throw new IFT287Exception("Lot inexistant" + nomlot);	
@@ -35,8 +35,8 @@ public class GestionDemande {
 				throw new IFT287Exception("Membre inexistant" + noMembre );
 			}
 			
-			if(!demandes.existe(nomlot)) {
-			throw new IFT287Exception("Demande inexistante");
+			if(demandes.existe(nomlot)) {
+			throw new IFT287Exception("Demande existante");
 			}		
 			demandes.ajouterDemande(noMembre, nomlot);
 				
