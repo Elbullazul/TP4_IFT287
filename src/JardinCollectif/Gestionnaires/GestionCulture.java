@@ -49,6 +49,7 @@ public class GestionCulture {
 				throw new IFT287Exception("Membre:" + noMembre + "ne fait pas partie de" + nomLot);
 			}
 			cultures.ajouterculture(nomLot, nomPlante, nomLot, nombreExemplaire, date);
+			System.out.println("PLante"+ nomPlante + "A join le lot"+ nomLot);
 		} catch (Exception e) {
 			throw e;
 		}
@@ -83,6 +84,7 @@ public class GestionCulture {
 			
 
 				cultures.updateNbExemplaire(nomLot, nomPlante, 0);
+				System.out.println("La plante"+ nomPlante +"a join le lot" + nomLot);
 			
 		} catch (Exception e) {
 			throw e;

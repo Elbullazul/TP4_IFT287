@@ -40,6 +40,7 @@ public class GestionDemande {
 			}		
 			demandes.ajouterDemande(noMembre, nomlot);
 				
+			System.out.println("La demande de"+ noMembre + "pour le lot"+ nomlot+ "est soumise");
 		}
 		  catch (Exception e)
         {
@@ -53,6 +54,7 @@ public class GestionDemande {
 			throw new IFT287Exception("Demande inexistante");
 			}		
 			demandes.supprimerDemande(nomlot);
+			System.out.println("Demande de lot" + nomlot + "supprimer par"+ noMembre);
 		}
 		  catch (Exception e)
         {
@@ -79,7 +81,7 @@ public class GestionDemande {
 			{throw new IFT287Exception(nomlot +"est deja Refusee");}
 			
 			demandes.updateStatus(nomlot,noMembre,status.STATUS_APPROVED);
-	
+			System.out.println("Demande approuvee");
 	}
 	catch(Exception e) {
 		throw e;
@@ -103,6 +105,7 @@ public class GestionDemande {
 			{throw new IFT287Exception(nomlot +"est deja Refusee");}
 			
 			demandes.updateStatus(nomlot,noMembre,status.STATUS_DENIED);
+			System.out.println("Demande refusee");
 	}
 	catch(Exception e) {
 		throw e;

@@ -29,6 +29,7 @@ public class GestionMembre {
 
 			// Ajout du membre.
 			membre.inscrire(nomemb, fName, name, pw);
+			System.out.println(nomemb+"Est inscrit");
 
 		} catch (Exception e) {
 			throw e;
@@ -64,6 +65,7 @@ public class GestionMembre {
 			}
 			
 			membre.updateAdmin(nomemb,true);
+			System.out.println(nomemb + "Est un admin");
 
 		} catch (Exception e) {
 

@@ -33,7 +33,8 @@ public class GestionAttribution {
 			if (attributions.existe(nomlot, id)) {
 				throw new IFT287Exception("Le Membre:" + id + "fait deja partie du lot");
 			}
-
+			attributions.ajouterAttribution(id, nomlot);
+			System.out.println(id +"A join le lot"+ nomlot);
 		} catch (Exception e) {
 			throw e;
 		}
