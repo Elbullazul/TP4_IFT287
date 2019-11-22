@@ -56,6 +56,12 @@ public class GestionCulture {
 
 	public void recolterplante(String nomPlante, String nomLot, String id) throws Exception {
 		try {
+			
+			Calendar d = Calendar.getInstance();
+			Calendar c = Calendar.getInstance();
+			c.setTime(cultures.getdate(nomLot,nomPlante));
+			c.add(Calendar.DATE, plantes.getPlante(nomPlante).gettcult());
+			
 			if (!plantes.existe(nomPlante)) {
 				throw new IFT287Exception("Plante inexistante:" + nomPlante);
 			}
@@ -70,8 +76,11 @@ public class GestionCulture {
 			}
 			if(cultures.NbExemplaire(nomLot, nomPlante) == 0) {
 				throw new IFT287Exception("Le lot"+ nomLot + "contient"+ nomPlante + cultures.NbExemplaire(nomLot, nomPlante) );}
-			//if(cultures.getdate(nomLot,nomPlante). == new Date()) {}
+			if(d.before(c)) {
 				
+				throw new IFT287Exception("Le lot"+ nomLot + "contient"+ nomPlante +"pour la date"+ cultures.getdate(nomLot, nomPlante) );
+			}
+			
 
 				cultures.updateNbExemplaire(nomLot, nomPlante, 0);
 			
