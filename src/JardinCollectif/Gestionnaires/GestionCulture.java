@@ -37,19 +37,19 @@ public class GestionCulture {
 			throws Exception {
 		try {
 			if (!plantes.existe(nomPlante)) {
-				throw new IFT287Exception("Plante inexistante:" + nomPlante);
+				throw new IFT287Exception("Plante inexistante");
 			}
 			if (!lots.existe(nomLot)) {
-				throw new IFT287Exception("Lots Inexistant:" + nomLot);
+				throw new IFT287Exception("Lot inexistant");
 			}
 			if (!membres.existe(noMembre)) {
-				throw new IFT287Exception("Membre inexistant" + noMembre);
+				throw new IFT287Exception("Membre inexistant");
 			}
 			if (!attributions.existe(nomLot, noMembre)) {
 				throw new IFT287Exception("Membre:" + noMembre + "ne fait pas partie de" + nomLot);
 			}
-			cultures.ajouterculture(nomLot, nomPlante, nomLot, nombreExemplaire, date);
-			System.out.println("PLante"+ nomPlante + "A join le lot"+ nomLot);
+			cultures.ajouterculture(nomLot, nomPlante, noMembre, nombreExemplaire, date);
+			System.out.println(Integer.toString(nombreExemplaire) + " " + nomPlante + "s plantées sur lot " + nomLot);
 		} catch (Exception e) {
 			throw e;
 		}
@@ -57,57 +57,51 @@ public class GestionCulture {
 
 	public void recolterplante(String nomPlante, String nomLot, String id) throws Exception {
 		try {
-			
 			Calendar d = Calendar.getInstance();
 			Calendar c = Calendar.getInstance();
-			c.setTime(cultures.getdate(nomLot,nomPlante));
+			c.setTime(cultures.getdate(nomLot, nomPlante));
 			c.add(Calendar.DATE, plantes.getPlante(nomPlante).gettcult());
-			
+
 			if (!plantes.existe(nomPlante)) {
-				throw new IFT287Exception("Plante inexistante:" + nomPlante);
+				throw new IFT287Exception("Plante inexistante");
 			}
 			if (!lots.existe(nomLot)) {
-				throw new IFT287Exception("Lots Inexistant:" + nomLot);
+				throw new IFT287Exception("Lot inexistant");
 			}
 			if (!membres.existe(id)) {
-				throw new IFT287Exception("Membre inexistant" + id);
+				throw new IFT287Exception("Membre inexistant");
 			}
 			if (!attributions.existe(nomLot, id)) {
-				throw new IFT287Exception("Membre:" + id + "ne fait pas partie de" + nomLot);
+				throw new IFT287Exception("Membre ne fait pas partie du lot");
 			}
-			if(cultures.NbExemplaire(nomLot, nomPlante) == 0) {
-				throw new IFT287Exception("Le lot"+ nomLot + "contient"+ nomPlante + cultures.NbExemplaire(nomLot, nomPlante) );}
-			if(d.before(c)) {
-				
-				throw new IFT287Exception("Le lot"+ nomLot + "contient"+ nomPlante +"pour la date"+ cultures.getdate(nomLot, nomPlante) );
+			if (cultures.NbExemplaire(nomLot, nomPlante) == 0) {
+				throw new IFT287Exception(
+						"Le lot " + nomLot + " ne contient aucun exemplaire de " + nomPlante);
 			}
-			
+			if (d.before(c)) {
+				throw new IFT287Exception("Le lot " + nomLot + " contient " + nomPlante + " pour la date"
+						+ cultures.getdate(nomLot, nomPlante));
+			}
 
-				cultures.updateNbExemplaire(nomLot, nomPlante, 0);
-				System.out.println("La plante"+ nomPlante +"a join le lot" + nomLot);
-			
+			cultures.updateNbExemplaire(nomLot, nomPlante, 0);
+			System.out.println("Exemplaires de " + nomPlante + " récoltés");
+
 		} catch (Exception e) {
 			throw e;
 		}
 	}
 
-	
 	public void affichePlanteLot(String nomlot) throws Exception {
 		try {
 			if (!lots.existe(nomlot)) {
-				throw new IFT287Exception("Lots Inexistant:" + nomlot);}
-			
-			if(cultures.listerPlante(nomlot).isEmpty()) {
-				throw new IFT287Exception("La liste de plante du lot:"+ nomlot+"est vide");
+				throw new IFT287Exception("Lot inexistant");
 			}
-			cultures.AfficherPlante(nomlot);
-			
-			
-		}
-		catch(Exception e) {
+
+			cultures.AfficherPlanteLot(nomlot);
+
+		} catch (Exception e) {
 			throw e;
 		}
-		
 	}
-	
+
 }

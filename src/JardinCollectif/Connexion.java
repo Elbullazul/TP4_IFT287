@@ -1,4 +1,4 @@
-package JardinCollectif.Objects;
+package JardinCollectif;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,25 +16,25 @@ import com.mongodb.client.MongoDatabase;
  * <br>
  * 
  * Cette classe ouvre une connexion avec une BD via JDBC.<br>
- * La m�thode serveursSupportes() indique les serveurs support�s.<br>
+ * La méthode serveursSupportes() indique les serveurs supportés.<br>
  * 
  * <pre>
- * Pr�-condition
- *   Le driver JDBC appropri� doit �tre accessible.
+ * Pré-condition
+ *   Le driver JDBC approprié doit étre accessible.
  * 
  * Post-condition
- *   La connexion est ouverte en mode autocommit false et s�rialisable, 
- *   (s'il est support� par le serveur).
+ *   La connexion est ouverte en mode autocommit false et sérialisable, 
+ *   (s'il est supporté par le serveur).
  * </pre>
  * 
  * <br>
  * IFT287 - Exploitation de BD relationnelles et OO
  * 
- * @author Marc Frappier - Universit� de Sherbrooke
+ * @author Marc Frappier - Université de Sherbrooke
  * @version Version 2.0 - 13 novembre 2004
  * 
  * 
- * @author Vincent Ducharme - Universit� de Sherbrooke
+ * @author Vincent Ducharme - Université de Sherbrooke
  * @version Version 3.0 - 21 mai 2016
  */
 public class Connexion {
@@ -43,14 +43,14 @@ public class Connexion {
 	private MongoDatabase database;
 
 	/**
-	 * Ouverture d'une connexion en mode autocommit false et s�rialisable (si
-	 * support�)
+	 * Ouverture d'une connexion en mode autocommit false et sérialisable (si
+	 * supporté)
 	 * 
-	 * @param serveur Le type de serveur SQL � utiliser (Valeur : local, dinf).
-	 * @param bd      Le nom de la base de donn�es sur le serveur.
-	 * @param user    Le nom d'utilisateur � utiliser pour se connecter � la base de
-	 *                donn�es.
-	 * @param pass    Le mot de passe associ� � l'utilisateur.
+	 * @param serveur Le type de serveur SQL é utiliser (Valeur : local, dinf).
+	 * @param bd      Le nom de la base de données sur le serveur.
+	 * @param user    Le nom d'utilisateur é utiliser pour se connecter é la base de
+	 *                données.
+	 * @param pass    Le mot de passe associé é l'utilisateur.
 	 */
 	public Connexion(String serveur, String bd, String user, String pass) throws Exception {
 		if (serveur.equals("local")) {
@@ -66,7 +66,7 @@ public class Connexion {
 		database = client.getDatabase(bd);
 
 		System.out.println(
-				"Ouverture de la connexion :\n" + "Connect� sur la BD ObjectDB " + bd + " avec l'utilisateur " + user);
+				"Ouverture de la connexion :\n" + "Connecté sur la BD ObjectDB " + bd + " avec l'utilisateur " + user);
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class Connexion {
 	 */
 	public void fermer() {
 		client.close();
-		System.out.println("Connexion ferm�e ");
+		System.out.println("Connexion fermée ");
 	}
 
 	/**

@@ -11,7 +11,7 @@ import org.bson.Document;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 
-import JardinCollectif.Objects.Connexion;
+import JardinCollectif.Connexion;
 import JardinCollectif.Objects.Lot;
 import JardinCollectif.Objects.Plante;
 
@@ -35,7 +35,6 @@ public class Plantes {
 	 */
 	public boolean existe(String name) {
 		return plantesCollection.find(eq("nom", name)).first() != null;
-
 	}
 
 	/**
@@ -47,7 +46,6 @@ public class Plantes {
 			return new Plante(d);
 		}
 		return null;
-
 	}
 
 	public boolean supprimerPlante(String name) {
@@ -57,7 +55,6 @@ public class Plantes {
 	public void ajouterPlante(String nom, int tempsG) {
 		Plante p = new Plante(nom, tempsG);
 		plantesCollection.insertOne(p.toDocument());
-
 	}
 
 	public List<Plante> listerPlante() {
@@ -78,7 +75,7 @@ public class Plantes {
 		MongoCursor<Document> plante = plantesCollection.find().iterator();
 		try {
 			while (plante.hasNext()) {
-				System.out.println(new Lot(plante.next()).toString());
+				System.out.println(new Plante(plante.next()).toString());
 			}
 		} finally {
 			plante.close();

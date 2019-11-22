@@ -8,7 +8,6 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 import JardinCollectif.Gestionnaires.GestionJardinCollectif;
-import JardinCollectif.Objects.Connexion;
 
 import java.sql.*;
 
@@ -76,7 +75,7 @@ public class JardinCollectif {
 	 */
 	static void executerTransaction(String transaction) throws Exception, IFT287Exception {
 		try {
-			System.out.print(transaction);
+			System.out.println(transaction);
 			// Decoupage de la transaction en mots
 			StringTokenizer tokenizer = new StringTokenizer(transaction, " ");
 			if (tokenizer.hasMoreTokens()) {
@@ -111,6 +110,7 @@ public class JardinCollectif {
 					String nomembre = readString(tokenizer);
 
 					gestionJardin.getGestionDemande().accepterDemande(nomlot, nomembre);
+					gestionJardin.getGestionAttribution().rejoindreLot(nomlot, nomembre);
 				} else if (command.equals("refuserDemande")) {
 					String nomlot = readString(tokenizer);
 					String nomembre = readString(tokenizer);
@@ -157,7 +157,7 @@ public class JardinCollectif {
 				} else if (command.equals("afficherPlantesLot")) {
 					String nomlot = readString(tokenizer);
 
-					//gestionJardin.getGestionCulture().afficherPlantesLot(nomlot);
+					gestionJardin.getGestionCulture().affichePlanteLot(nomlot);
 				} else if (command.equals("retirerPlante")) {
 					String nomplante = readString(tokenizer);
 

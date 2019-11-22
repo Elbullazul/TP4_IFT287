@@ -2,18 +2,9 @@ package JardinCollectif.Objects;
 
 import static com.mongodb.client.model.Filters.eq;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
-
 import org.bson.Document;
 
-@Entity
 public class Membre {
-
-	@Id
 	private String nomemb;
 
 	private String fName;
@@ -80,5 +71,4 @@ public class Membre {
 		return new Document().append("id", nomemb).append("nom", name).append("prenom", fName).append("password", pw)
 				.append("isadmin", isAdmin);
 	}
-
 }

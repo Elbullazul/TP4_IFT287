@@ -12,7 +12,7 @@ import org.bson.Document;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 
-import JardinCollectif.Objects.Connexion;
+import JardinCollectif.Connexion;
 import JardinCollectif.Objects.Lot;
 
 public class Lots {

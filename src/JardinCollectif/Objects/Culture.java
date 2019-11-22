@@ -25,7 +25,6 @@ public class Culture {
 		idMembre = d.getString("idMembre");
 		nbExemplaires = d.getInteger("ndExemplaires");
 		plantee = d.getDate("plantee");
-
 	}
 
 	public Culture(String nom, Integer mode) {

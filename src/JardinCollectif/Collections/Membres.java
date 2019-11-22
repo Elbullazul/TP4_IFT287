@@ -6,14 +6,12 @@ import static com.mongodb.client.model.Updates.set;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.persistence.TypedQuery;
-
 import org.bson.Document;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 
-import JardinCollectif.Objects.Connexion;
+import JardinCollectif.Connexion;
 import JardinCollectif.Objects.Membre;
 
 public class Membres {

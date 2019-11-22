@@ -1,12 +1,12 @@
 package JardinCollectif.Gestionnaires;
 
+import JardinCollectif.Connexion;
 import JardinCollectif.Collections.Attributions;
 import JardinCollectif.Collections.Cultures;
 import JardinCollectif.Collections.Demandes;
 import JardinCollectif.Collections.Lots;
 import JardinCollectif.Collections.Membres;
 import JardinCollectif.Collections.Plantes;
-import JardinCollectif.Objects.Connexion;
 
 public class GestionJardinCollectif {
 

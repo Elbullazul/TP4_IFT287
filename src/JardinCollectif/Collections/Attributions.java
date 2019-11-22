@@ -8,8 +8,8 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 
+import JardinCollectif.Connexion;
 import JardinCollectif.Objects.Attribution;
-import JardinCollectif.Objects.Connexion;
 
 public class Attributions {
 
@@ -47,7 +47,6 @@ public class Attributions {
 
 		membres.close();
 		return compteur;
-
 	}
 
 }

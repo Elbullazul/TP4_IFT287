@@ -1,15 +1,9 @@
 package JardinCollectif.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 import org.bson.Document;
 
-@Entity
 public class Demande {
-	@Id
 	private String idMembre;
-	@Id
 	private String nomLot;
 	private Integer status;
 	
@@ -76,7 +70,6 @@ public class Demande {
 		return new Document().append("idMembre", idMembre)
 				.append("nomLot", nomLot)
 				.append("status",status);
-		
 	}
 }
 

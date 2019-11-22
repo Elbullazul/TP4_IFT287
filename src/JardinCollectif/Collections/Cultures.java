@@ -12,7 +12,7 @@ import org.bson.Document;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 
-import JardinCollectif.Objects.Connexion;
+import JardinCollectif.Connexion;
 import JardinCollectif.Objects.Culture;
 import JardinCollectif.Objects.Membre;
 import JardinCollectif.Objects.Plante;
@@ -40,7 +40,6 @@ public class Cultures {
 
 	public void ajouterculture(String nomLot, String nomPlante, String idMembre, Integer nbExemplaires,
 			Date datePlantation) {
-
 		Culture c = new Culture(nomLot, nomPlante, idMembre, nbExemplaires, datePlantation);
 		culturesCollection.insertOne(c.toDocument());
 	}
@@ -49,12 +48,12 @@ public class Cultures {
 		return culturesCollection.find(eq("nomLot", nomlot)).first() != null;
 	}
 
-	public void AfficherPlante(String nomlot) {
+	public void AfficherPlanteLot(String nomlot) {
 		MongoCursor<Document> lot = culturesCollection.find(eq("nomLot", nomlot)).iterator();
 		try {
 			while (lot.hasNext()) {
 				Culture c = new Culture(lot.next());
-				System.out.println(c.getNomPlante());
+				System.out.println(c.toString());
 			}
 		} finally {
 			lot.close();
@@ -66,7 +65,6 @@ public class Cultures {
 		MongoCursor<Document> lot = culturesCollection.find(eq("nomLot", nomlot)).iterator();
 		try {
 			while (lot.hasNext()) {
-
 				lplante.add(new Plante(lot.next()));
 			}
 		} finally {
@@ -103,5 +101,9 @@ public class Cultures {
 	public void updateNbExemplaire(String nomLot, String nomplante, int nbExmp) {
 		culturesCollection.updateOne(and(eq("nomLot", nomLot), eq("nomPlante", nomplante)),
 				set("ndExemplaires", nbExmp));
+	}
+	
+	public void recolterPlante(String nomLot, String nomplante, Date date) {
+		//culturesCollection.deleteMany(and(and(eq("nomPlante", nomplante), eq("nomLot", nomLot)), ));
 	}
 }

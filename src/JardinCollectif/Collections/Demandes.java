@@ -5,9 +5,10 @@ import static com.mongodb.client.model.Updates.set;
 
 import org.bson.Document;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 
-import JardinCollectif.Objects.Connexion;
+import JardinCollectif.Connexion;
 import JardinCollectif.Objects.Demande;
 
 public class Demandes {
@@ -27,16 +28,16 @@ public class Demandes {
 		return cx;
 	}
 
-	public boolean existe(String nomlot) {
-		return demandesCollection.find(eq("nomLot", nomlot)).first() != null;
+	public boolean existe(String nomlot, String idmembre) {
+		return demandesCollection.find(and(eq("nomLot", nomlot), eq("idMembre", idmembre))).first() != null;
 	}
 
-	public boolean supprimerDemande(String nomlot) {
-		return demandesCollection.deleteOne(eq("nomLot", nomlot)).getDeletedCount() > 0;
+	public boolean supprimerDemande(String nomlot, String idmembre) {
+		return demandesCollection.deleteOne(and(eq("nomLot", nomlot), eq("idMembre", idmembre))).getDeletedCount() > 0;
 	}
 
 	public void ajouterDemande(String id, String nomlot) {
-		Demande d = new Demande(id, nomlot);
+		Demande d = new Demande(nomlot, id);
 		demandesCollection.insertOne(d.toDocument());
 	}
 
@@ -44,8 +45,12 @@ public class Demandes {
 		demandesCollection.updateOne(and(eq("nomLot", nomlot), eq("idMembre", noMembre)), set("status", status));
 	}
 
-	public int getStatus(String nomlot) {
-		Demande d = new Demande(demandesCollection.find(eq("nomLot", nomlot)).first());
+	public int getStatus(String nomlot, String noMembre) {
+		BasicDBObject query = new BasicDBObject();
+		query.append("nomLot", nomlot);
+		query.append("idMembre",noMembre);
+		
+		Demande d = new Demande(demandesCollection.find(query).first());
 		return d.getStatus();
 	}
 

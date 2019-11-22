@@ -1,11 +1,8 @@
 package JardinCollectif.Gestionnaires;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import JardinCollectif.Connexion;
 import JardinCollectif.IFT287Exception;
 import JardinCollectif.Collections.Membres;
-import JardinCollectif.Objects.Connexion;
 import JardinCollectif.Objects.Membre;
 
 public class GestionMembre {
@@ -20,16 +17,18 @@ public class GestionMembre {
 
 	public void InscrireMembre(String fName, String name, String pw, String nomemb) throws Exception {
 		try {
-
 			Membre m = new Membre(nomemb, fName, name, pw);
 
 			// Vérifie si le membre existe déja
-			if (!membre.existe(nomemb))
-				throw new IFT287Exception("Membre existe deja�: " + nomemb);
+			if (membre.existe(nomemb))
+				throw new IFT287Exception("Membre existe déjà");
+			
+			if (pw.length() < 8)
+				throw new IFT287Exception("Mot de passe trop court. Longueur minimum de 8 caractères");
 
 			// Ajout du membre.
 			membre.inscrire(nomemb, fName, name, pw);
-			//System.out.println(nomemb+"Est inscrit");
+			System.out.println("Membre inscrit");
 
 		} catch (Exception e) {
 			throw e;
@@ -38,37 +37,33 @@ public class GestionMembre {
 
 	public void supprimerMembre(String nomemb) throws Exception {
 		try {
-
 			// Vérifie si le membre existe et son nombre de pret en cours
 			if (!membre.existe(nomemb))
-				throw new IFT287Exception("Membre inexistant: " + nomemb);
+				throw new IFT287Exception("Membre inexistant");
 
 			// Suppression du membre
 			membre.desinscrire(nomemb);
-			//System.out.println("Le Membre:" + nomemb + "est Supprimee");
+			System.out.println("Membre retiré");
 
 		} catch (Exception e) {
-
 			throw e;
 		}
 	}
 
 	public void Promouvoir(String nomemb) throws Exception {
 		try {
-
 			if (!membre.existe(nomemb)) {
-				throw new IFT287Exception("Membre inexistant: " + nomemb);
+				throw new IFT287Exception("Membre inexistant");
 			}
 
-			if (!membre.estAdmin(nomemb)) {
-				throw new IFT287Exception(nomemb + "Est un admin");
+			if (membre.estAdmin(nomemb)) {
+				throw new IFT287Exception("Le membre est déjà un admin");
 			}
-			
-			membre.updateAdmin(nomemb,true);
-			//System.out.println(nomemb + "Est un admin");
+
+			membre.updateAdmin(nomemb, true);
+			System.out.println(nomemb + " promu admin");
 
 		} catch (Exception e) {
-
 			throw e;
 		}
 	}
@@ -76,12 +71,11 @@ public class GestionMembre {
 	public void AfficheMembres() throws Exception {
 		try {
 			if (membre.listerMembre().isEmpty()) {
-				throw new IFT287Exception("Aucun Membre trouver");
+				throw new IFT287Exception("Aucun membre trouvé");
 			}
-			membre.afficherMembre(); 
+			membre.afficherMembre();
 
 		} catch (Exception e) {
-
 			throw e;
 		}
 	}

@@ -41,7 +41,6 @@ public class Attribution {
 	}
 
 	public Document toDocument() {
-
 		return new Document().append("idMembre", idMembre).append("nomLot", nomLot);
 	}
 }
