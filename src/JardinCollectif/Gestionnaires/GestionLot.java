@@ -50,7 +50,7 @@ public class GestionLot {
 	
 	public void AfficheLots()throws Exception {
 		try {
-		if(lots.listerLot() == null) {
+		if(lots.listerLot().isEmpty()) {
 			throw new IFT287Exception("Liste de lot null.");	
 			
 		}

@@ -97,7 +97,7 @@ public class GestionCulture {
 			if (!lots.existe(nomlot)) {
 				throw new IFT287Exception("Lots Inexistant:" + nomlot);}
 			
-			if(cultures.listerPlante(nomlot) == null) {
+			if(cultures.listerPlante(nomlot).isEmpty()) {
 				throw new IFT287Exception("La liste de plante du lot:"+ nomlot+"est vide");
 			}
 			cultures.AfficherPlante(nomlot);

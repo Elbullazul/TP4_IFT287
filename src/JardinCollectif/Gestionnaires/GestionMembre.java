@@ -24,12 +24,12 @@ public class GestionMembre {
 			Membre m = new Membre(nomemb, fName, name, pw);
 
 			// Vérifie si le membre existe déja
-			if (membre.existe(nomemb))
+			if (!membre.existe(nomemb))
 				throw new IFT287Exception("Membre existe deja�: " + nomemb);
 
 			// Ajout du membre.
 			membre.inscrire(nomemb, fName, name, pw);
-			System.out.println(nomemb+"Est inscrit");
+			//System.out.println(nomemb+"Est inscrit");
 
 		} catch (Exception e) {
 			throw e;
@@ -45,7 +45,7 @@ public class GestionMembre {
 
 			// Suppression du membre
 			membre.desinscrire(nomemb);
-			System.out.println("Le Membre:" + nomemb + "est Supprimee");
+			//System.out.println("Le Membre:" + nomemb + "est Supprimee");
 
 		} catch (Exception e) {
 
@@ -56,7 +56,7 @@ public class GestionMembre {
 	public void Promouvoir(String nomemb) throws Exception {
 		try {
 
-			if (membre.existe(nomemb)) {
+			if (!membre.existe(nomemb)) {
 				throw new IFT287Exception("Membre inexistant: " + nomemb);
 			}
 
@@ -65,7 +65,7 @@ public class GestionMembre {
 			}
 			
 			membre.updateAdmin(nomemb,true);
-			System.out.println(nomemb + "Est un admin");
+			//System.out.println(nomemb + "Est un admin");
 
 		} catch (Exception e) {
 
@@ -75,7 +75,7 @@ public class GestionMembre {
 
 	public void AfficheMembres() throws Exception {
 		try {
-			if (membre.listerMembre() == null) {
+			if (membre.listerMembre().isEmpty()) {
 				throw new IFT287Exception("Aucun Membre trouver");
 			}
 			membre.afficherMembre(); 

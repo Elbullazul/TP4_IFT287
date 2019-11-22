@@ -52,7 +52,7 @@ public class GestionPlante {
 	public void Afficheplantes()throws Exception {
 		try {
 
-			if(plantes.listerPlante() == null) {
+			if(plantes.listerPlante().isEmpty()) {
 
 				throw new IFT287Exception("Aucune plante existe");
 			}
