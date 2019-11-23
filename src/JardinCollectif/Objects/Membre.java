@@ -17,7 +17,7 @@ public class Membre {
 		name = d.getString("nom");
 		fName = d.getString("prenom");
 		pw = d.getString("password");
-		isAdmin = d.getBoolean("isadmin");
+		isAdmin = d.getBoolean("isAdmin");
 	}
 
 	public Membre(String noMembre, String prenom, String nom, String mdp) {
@@ -66,6 +66,6 @@ public class Membre {
 
 	public Document toDocument() {
 		return new Document().append("id", nomemb).append("nom", name).append("prenom", fName).append("password", pw)
-				.append("isadmin", isAdmin);
+				.append("isAdmin", isAdmin);
 	}
 }

@@ -1,28 +1,35 @@
 afficherMembres
-
-inscrireMembre  bob lie 1234 1
-
-inscrireMembre  boba lie 1234 1
-
-inscrireMembre  bob lie 1234 2
-
-afficherMembres
-
+inscrireMembre  bob lie 1234568 1
+inscrireMembre  boba lie 123444444 1
+inscrireMembre  bob lie 123411111 2
 promouvoirAdministrateur 1
-	
-afficherMembres
-	
+afficherMembres	
 afficherLots
-	
-ajouterLot jardin1 2
-	
-ajouterLot jardin1 2
-	
-ajouterLot jardin2 2
-	
+ajouterLot jardin1 3
+ajouterLot jardin1 4
+ajouterLot jardin2 5
+ajouterLot jardin3 5
 rejoindreLot jardin1 1
-	
+rejoindreLot jardin2 1
+supprimerLot jardin3
+accepterDemande jardin1 1
+refuserDemande jardin1 1
+refuserDemande jardin2 1
+accepterDemande jardin2 1
 afficherLots
-	
-	
-	
+afficherPlantes
+ajouterPlante hibiscus 15
+ajouterPlante roses 30
+afficherPlantes
+retirerPlante roses
+afficherPlantes
+planterPlante hibiscus jardin1 1 3 2019-11-22
+planterPlante hibiscus jardin1 1 3 2018-11-22
+planterPlante hibiscus jardin1 1 3 2020-11-22
+recolterPlante hibiscus jardin1 1
+recolterPlante hibiscus jardin2 1
+recolterPlante hibiscus jardin1 2
+recolterPlante roses jardin1 1
+afficherPlantesLot jardin1
+afficherPlantesLot jardin2
+ 

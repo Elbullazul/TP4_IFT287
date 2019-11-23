@@ -43,7 +43,7 @@ public class Lots {
 	 * Ajout d'un nouveau Lot.
 	 */
 	public void ajouterLot(String nom, int nbMax) {
-		Lot l = new Lot(nom, nbMax);
+		Lot l = new Lot(nom,nbMax);
 		lotsCollection.insertOne(l.toDocument());
 	}
 

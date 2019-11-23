@@ -103,7 +103,4 @@ public class Cultures {
 				set("ndExemplaires", nbExmp));
 	}
 	
-	public void recolterPlante(String nomLot, String nomplante, Date date) {
-		//culturesCollection.deleteMany(and(and(eq("nomPlante", nomplante), eq("nomLot", nomLot)), ));
-	}
 }

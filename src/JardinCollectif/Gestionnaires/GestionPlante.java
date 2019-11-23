@@ -16,7 +16,7 @@ public class GestionPlante {
 	public void AjouterPlante(String nom, int jour) throws Exception {
 		try {
 			if (plantes.existe(nom)) {
-				throw new IFT287Exception("Le lante existe déjà");
+				throw new IFT287Exception("Le plante existe déjà");
 			}
 			if (jour <= 0) {
 				throw new IFT287Exception("Période de germination doit être supérieur à 0");
@@ -42,8 +42,7 @@ public class GestionPlante {
 	public void Afficheplantes() throws Exception {
 		try {
 			if (plantes.listerPlante().isEmpty()) {
-				throw new IFT287Exception("Aucune plante trouvée");
-			}
+				throw new IFT287Exception("Aucune plante trouvée");			}
 
 			plantes.afficherPlante();
 		} catch (Exception e) {

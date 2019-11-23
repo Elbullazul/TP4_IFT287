@@ -5,7 +5,7 @@ import org.bson.Document;
 public class Lot {
 
 	private String name;
-	private int maxMemb;
+	private Integer maxMemb;
 
 	public Lot() {
 	}

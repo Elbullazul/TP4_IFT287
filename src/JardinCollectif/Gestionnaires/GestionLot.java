@@ -41,7 +41,6 @@ public class GestionLot {
 		} catch (Exception e) {
 			throw e;
 		}
-
 	}
 
 	public void AfficheLots() throws Exception {
